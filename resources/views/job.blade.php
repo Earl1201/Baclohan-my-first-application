@@ -1,4 +1,4 @@
-{{-- Updated job.blade.php - Enhanced Single Job View --}}
+{{-- Updated job.blade.php - Enhanced Single Job View with Employer --}}
 <x-layout>
     <x-slot:heading>
         Job Details
@@ -8,13 +8,29 @@
     <div class="max-w-2xl mx-auto">
         <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-xl p-8 border border-slate-600/40 shadow-2xl">
 
+            {{-- 🆕 ADDED: Employer Name --}}
+            <p class="text-sm text-emerald-300 font-medium mb-4 text-center uppercase tracking-wide">
+                {{ $job->employer->name }}
+            </p>
+
             {{-- Job title --}}
             <h2 class="text-3xl font-heading font-bold text-emerald-400 mb-6 text-center">
                 {{ $job['title'] }}
             </h2>
 
+            {{-- 🆕 ADDED: Job Description --}}
+            <p class="text-gray-300 text-center mb-8 text-lg">
+                This job pays {{ $job['salary'] }} per year.
+            </p>
+
             {{-- Job details --}}
             <div class="space-y-4">
+                {{-- 🆕 ADDED: Employer Details Row --}}
+                <div class="flex justify-between items-center py-3 px-4 bg-slate-700/50 rounded-lg">
+                    <span class="text-gray-300 font-medium">Employer:</span>
+                    <span class="text-emerald-400 font-semibold">{{ $job->employer->name }}</span>
+                </div>
+
                 <div class="flex justify-between items-center py-3 px-4 bg-slate-700/50 rounded-lg">
                     <span class="text-gray-300 font-medium">Position:</span>
                     <span class="text-white font-semibold">{{ $job['title'] }}</span>
