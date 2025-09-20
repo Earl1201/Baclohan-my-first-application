@@ -16,34 +16,48 @@
                     fontFamily: {
                         heading: ['Montserrat', 'sans-serif'],
                         body: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'office-gray': '#3a4247',
+                        'warm-beige': '#d4c5b0',
+                        'soft-green': '#7a8471'
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-gray-900 text-gray-300 font-body">
+<body class="bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 text-gray-100 font-body min-h-screen">
 
-    <nav class="bg-gray-800 bg-opacity-90 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+    <!-- Dimmed background image -->
+    <img src="{{ asset('images/Job List Background.jpg') }}" alt="Background" class="w-full h-screen object-top opacity-40 fixed top-0 left-0 -z-10" />
 
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-heading text-teal-400">Job Application<span class="text-gray-200">Brand</span></a>
-            <div class="space-x-6">
+    <!-- Side panels for aesthetic framing -->
+    <div class="fixed left-0 top-0 w-0 h-full bg-gradient-to-b from-slate-10/90 via-slate-800/80 to-slate-90/90 backdrop-blur-sm z-10"></div>
+    <div class="fixed right-0 top-0 w-0 h-full bg-gradient-to-b from-slate-10/90 via-slate-800/80 to-slate-90/90 backdrop-blur-sm z-10"></div>
+
+    <nav class="bg-slate-900/85 backdrop-blur-md sticky top-0 z-50 shadow-2xl border-b border-slate-700/50">
+        <div class="container mx-auto px-20 py-5 flex justify-between items-center">
+            <a href="#" class="text-3xl font-heading text-emerald-400 hover:text-emerald-300 transition-colors">
+                Job Application<span class="text-amber-100"></span>
+            </a>
+           <div class="hidden md:block">
+    <div class="ml-10 flex items-baseline space-x-4">
+        <!-- inside layout.blade.php's nav section -->
         <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-        <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
-        <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
-            </div>
+        <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
         </div>
-
-
+    </div>
     </nav>
 
-    <main class="container mx-auto mt-16 px-4 py-24 text-center">
-        <h1 class="text-5xl md:text-6xl font-extrabold font-heading text-white mb-4 leading-tight">
+    <main class="container mx-auto mt-20 px-20 py-32 text-center relative z-20">
+        <h1 class="text-6xl md:text-7xl font-extrabold font-heading text-white mb-6 leading-tight drop-shadow-2xl">
             {{$heading}}
         </h1>
 
-        {{ $slot}}
+        <div class="backdrop-blur-sm bg-slate-900/20 rounded-2xl p-8 shadow-2xl border border-slate-700/30">
+            {{ $slot}}
+        </div>
     </main>
 
 </body>
