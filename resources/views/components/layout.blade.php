@@ -50,12 +50,16 @@
     </div>
     </nav>
 
-    <main class="container mx-auto mt-20 px-20 py-32 text-center relative z-20">
-        <h1 class="text-6xl md:text-7xl font-extrabold font-heading text-white mb-6 leading-tight drop-shadow-2xl">
-            {{$heading}}
-        </h1>
+    <main class="container mx-auto mt-10 px-6 md:px-20 py-16 relative z-20">
+        {{-- Page heading --}}
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold font-heading text-white mb-6 leading-tight drop-shadow-2xl">
+                {{$heading}}
+            </h1>
+        </div>
 
-        <div class="backdrop-blur-sm bg-slate-900/20 rounded-2xl p-8 shadow-2xl border border-slate-700/30">
+        {{-- Content container with better spacing for cards --}}
+        <div class="backdrop-blur-sm bg-slate-900/20 rounded-2xl p-4 md:p-8 shadow-2xl border border-slate-700/30 min-h-[400px]">
             {{ $slot}}
         </div>
     </main>

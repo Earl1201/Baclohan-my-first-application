@@ -1,9 +1,47 @@
+{{-- Updated job.blade.php - Enhanced Single Job View --}}
 <x-layout>
-<x-slot:heading>
-Job
-</x-slot:heading>
-<h2 class="font-bold text-lg">{{ $job['title'] }}</h2>
-<p>
-This job pays {{ $job['salary'] }} per year.
-</p>
+    <x-slot:heading>
+        Job Details
+    </x-slot:heading>
+
+    {{-- Single job details card --}}
+    <div class="max-w-2xl mx-auto">
+        <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm rounded-xl p-8 border border-slate-600/40 shadow-2xl">
+
+            {{-- Job title --}}
+            <h2 class="text-3xl font-heading font-bold text-emerald-400 mb-6 text-center">
+                {{ $job['title'] }}
+            </h2>
+
+            {{-- Job details --}}
+            <div class="space-y-4">
+                <div class="flex justify-between items-center py-3 px-4 bg-slate-700/50 rounded-lg">
+                    <span class="text-gray-300 font-medium">Position:</span>
+                    <span class="text-white font-semibold">{{ $job['title'] }}</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3 px-4 bg-slate-700/50 rounded-lg">
+                    <span class="text-gray-300 font-medium">Annual Salary:</span>
+                    <span class="text-emerald-400 font-bold text-xl">{{ $job['salary'] }}</span>
+                </div>
+
+                <div class="flex justify-between items-center py-3 px-4 bg-slate-700/50 rounded-lg">
+                    <span class="text-gray-300 font-medium">Job ID:</span>
+                    <span class="text-amber-400 font-semibold">#{{ $job['id'] }}</span>
+                </div>
+            </div>
+
+            {{-- Action buttons --}}
+            <div class="flex gap-4 mt-8">
+                <a href="/jobs"
+                   class="flex-1 text-center bg-slate-600 hover:bg-slate-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 hover:shadow-lg">
+                    ← Back to Jobs
+                </a>
+
+                <button class="flex-1 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-emerald-500/30 transform hover:scale-105">
+                    Apply Now
+                </button>
+            </div>
+        </div>
+    </div>
 </x-layout>
