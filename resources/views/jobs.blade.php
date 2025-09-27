@@ -47,8 +47,13 @@
         @endforeach
     </div>
 
+    {{-- Pagination Links - Added for Task 3.2 --}}
+    <div class="mt-12">
+        {{ $jobs->links() }}
+    </div>
+
     {{-- If no jobs available --}}
-    @if(empty($jobs))
+    @if($jobs->count() == 0)
         <div class="text-center py-12">
             <p class="text-gray-400 text-lg">No jobs available at the moment.</p>
         </div>
