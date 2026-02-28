@@ -15,7 +15,7 @@
                         <label for="title" class="block text-sm font-medium leading-6 text-white mb-3 uppercase tracking-wide">Title</label>
                         <div class="mt-2">
                             <div class="flex rounded-xl shadow-sm ring-1 ring-inset ring-white/20 focus-within:ring-2 focus-within:ring-inset focus-within:ring-emerald-400 sm:max-w-md bg-white/10 backdrop-blur-sm">
-                                <input type="text" name="title" id="title" class="block flex-1 border-0 bg-transparent py-4 px-4 text-white placeholder:text-slate-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Shift Leader" required>
+                                <input type="text" name="title" id="title" class="block flex-1 border-0 bg-transparent py-4 px-4 text-white placeholder:text-slate-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Shift Leader" >
                             </div>
                         </div>
                         @error('title')
@@ -32,7 +32,7 @@
                         <label for="salary" class="block text-sm font-medium leading-6 text-white mb-3 uppercase tracking-wide">Salary</label>
                         <div class="mt-2">
                             <div class="flex rounded-xl shadow-sm ring-1 ring-inset ring-white/20 focus-within:ring-2 focus-within:ring-inset focus-within:ring-emerald-400 sm:max-w-md bg-white/10 backdrop-blur-sm">
-                                <input type="text" name="salary" id="salary" class="block flex-1 border-0 bg-transparent py-4 px-4 text-white placeholder:text-slate-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="$50,000 Per Year" required>
+                                <input type="text" name="salary" id="salary" class="block flex-1 border-0 bg-transparent py-4 px-4 text-white placeholder:text-slate-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="$50,000 Per Year" >
                             </div>
                         </div>
                         @error('salary')
